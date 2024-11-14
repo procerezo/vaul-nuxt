@@ -1,0 +1,1 @@
+{"root":["./.nuxt/nuxt.d.ts","./nuxt.config.ts","./components/people.vue","./pages/about.vue","./pages/dashboard.vue","./pages/index.vue","./stores/useprofilestore.ts"],"errors":true,"version":"5.6.3"}
