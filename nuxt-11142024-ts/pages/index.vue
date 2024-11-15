@@ -10,9 +10,7 @@ interface Product {
 
 const { data: products, pending, error } = await useFetch<Product[]>('https://fakestoreapi.com/products', {
   key: 'products',
-  onError: (error: any) => {
-    console.error('Failed to fetch products:', error)
-  }
+
 })
 
 const email = ref('')
@@ -34,6 +32,13 @@ const handleSubmit = (e: Event) => {
           >
             About
           </NuxtLink>
+          <NuxtLink 
+            to="/dashboard"
+            class="text-blue-600 hover:text-blue-800 transition-colors duration-200 underline m-2"
+          >
+            Dashboard
+          </NuxtLink>
+         
         </nav>
         
         <form @submit.prevent="handleSubmit" class="mb-8">
@@ -55,7 +60,7 @@ const handleSubmit = (e: Event) => {
         </form>
       </header>
 
-      <div v-if="pending" class="text-center py-8">
+      <!-- <div v-if="pending" class="text-center py-8">
         <p class="text-gray-600">Loading products...</p>
       </div>
 
@@ -81,9 +86,9 @@ const handleSubmit = (e: Event) => {
             <h3 class="font-medium text-gray-900 mb-2 line-clamp-2">{{ product.title }}</h3>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div v-if="products" class="overflow-x-auto">
+      <!-- <div v-if="products" class="overflow-x-auto">
         <h2 class="text-2xl font-semibold mb-6">Table View</h2>
         <table class="w-full text-sm text-left text-gray-500">
           <thead class="text-xs text-gray-700 uppercase bg-gray-100">
@@ -115,7 +120,7 @@ const handleSubmit = (e: Event) => {
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

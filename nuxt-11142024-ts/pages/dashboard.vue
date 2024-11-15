@@ -34,6 +34,42 @@ onMounted(async () => {
 		</div>
 	</div>
 
+	<!-- table -->
+
+	<div v-if="products" class="overflow-x-auto container mx-auto mt-10">
+        <h2 class="text-2xl font-semibold mb-6">Table View</h2>
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+            <tr>
+              <th class="px-4 py-3">ID</th>
+              <th class="px-4 py-3">Title</th>
+              <th class="px-4 py-3">Description</th>
+              <th class="px-4 py-3">Image</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr 
+              v-for="product in products" 
+              :key="product.id"
+              class="bg-white hover:bg-gray-50"
+            >
+              <td class="px-4 py-3">{{ product.id }}</td>
+              <td class="px-4 py-3 font-medium text-gray-900">{{ product.title }}</td>
+              <td class="px-4 py-3">
+                <p class="line-clamp-2">{{ product.description }}</p>
+              </td>
+              <td class="px-4 py-3">
+                <img 
+                  :src="product.image" 
+                  :alt="product.title"
+                  class="h-20 w-20 object-contain"
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
 	
 </template>
 
